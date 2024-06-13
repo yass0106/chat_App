@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center">
+            EDIT STUDENT DETAILS
+        </h3>
+    </div>
+</div><!-- *ngIf="edit"-->
+<div class="container my-5">
+    <div class="col">
+        <div class="row">
+            
+            <div class="col">
+                Student Name :<input type="text" name="" id="" class="form-control" [(ngModel)]="name" >
+            </div>
+            <div class="col">
+                Register No:<input type="text" name="" id="" class="form-control" [(ngModel)]="regno" disabled>
+            </div>
+            <div class="col">
+                Department :<input type="text" name="" id="" class="form-control" [(ngModel)]="dep">
+            </div>
+            <div class="col">
+                Year :<input type="text" name="" id="" class="form-control" [(ngModel)]="year">
+            </div>
+        </div>
+    </div>
+    <div class="col mt-5"><button class="btn btn-primary" (click)="change()">change</button>
+    <button class="btn btn-danger ms-3" (click)="close()">close</button></div>
+</div>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col table table-responsive">
+           <!-- <div class="col-3">search: <input type="search" name="" id="" (on-click)="editstudent()" class="form-control bg-light my-3 border-info" [(ngModel)]="search"></div>  -->
+            <table class="table table-hover table-light text-center">
+                <thead>
+                    <tr>
+                    <th>NAME</th>
+                    <th>REGISTER NO</th>
+                    <th>DEPARTMENT</th>
+                    <th>YEAR</th>
+                    <th>ACTION </th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of students">
+                        <td>{{student.name}}</td>
+                        <td>{{student.registerNo}}</td>
+                        <td>{{student.department}}</td>
+                        <td>{{student.year}}</td>
+                        <td><button class="btn btn-primary" (click)="editedstudentdata(student.registerNo)">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="md-container text-center">
+    <div class="row m-5">
+        <h3>Bootstrap Theme Generators</h3>
+    </div>    
+</div>
+<div class="row m-5 px-5">
+        <div class="col-md-5 m-4">
+            <div class="row">
+                TEXT: <input type="text" name="" id="" class="form-control" [(ngModel)]="inputText">
+            </div>  
+            <div class="row my-2">
+                <div class="col">
+                     color: <input type="text" name="" id="" class="form-control" [(ngModel)]="textcolor">
+                </div>
+                <div class="col">
+                    background color: <input type="text" name="" id="" class="form-control" [(ngModel)]="bgcolor">
+               </div>
+            </div>  
+            <div class="row my-2">
+                <!-- <div class="col">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>select the padding type</option>
+                        <option *ngFor="let padding of paddings;let i= index" value="{{i}}" [(ngModel)]="Pad">{{padding}}</option>
+                      </select>
+                </div> -->
+            <div class="col">
+                paddnig range: <input type="text" name="" id="" class="form-control" [(ngModel)]="PadRange">
+            </div>
+            <div class="col">
+                margin range: <input type="text" name="" id="" class="form-control" [(ngModel)]="MarRange">
+           </div>
+            <div class="row my-2">
+                <label for="customRange3" class="form-label">Example range</label>
+                <input type="range" class="form-range" min="0" max="100" step="1" id="customRange3"  [(ngModel)]="range">
+                <p>{{range}}</p>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-5 m-4">
+            <div class="row text-center mt-3" [ngStyle]="{'color':textcolor,'background-color':bgcolor,'padding':PadRange,'margin':MarRange,'border-radius':range+px}">
+                    <h2>{{inputText| uppercase}}</h2>
+            </div>
+        </div>
+    </div>

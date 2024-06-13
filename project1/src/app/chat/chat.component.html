@@ -1,0 +1,206 @@
+<!-- <div class="container bg-dark"*ngIf="chatprocess">
+    <div class="row text-center">
+        <div class="col h3 text-light">CHAT APP</div>
+    </div>
+</div> -->
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col bg-light text-center p-5 m-1">
+            <p class="h5">Person 1</p>
+            <input type="text" class="form-control" [(ngModel)]="message_person">
+            <button class="btn btn-primary mt-2" (click)="send()">Send</button>
+        </div>
+        <div class="col bg-light text-center p-5 m-1">
+            <p class="h5">Person 2</p>
+            <input type="text" class="form-control" [(ngModel)]="message_person2">
+            <button class="btn btn-primary mt-2" (click)="send2()">Send</button>
+        </div>
+    </div>
+</div> -->
+
+<!-- 
+<div class="container my-5">
+    <div class="row">
+        <div class="col m-2 p-3 bg-light">
+            Sender  :<input type="text" class="form-control" [(ngModel)]="sender" [disabled]="Sfix">
+            <button *ngIf="!Sfix" class="btn btn-success mt-2" (click)="senderfix()">Confirm</button>
+        </div>
+        <div class="col m-2 p-3 bg-light">
+           Receiver  : <input type="text" class="form-control" [(ngModel)]="receiver" [disabled]="Rfix">
+            <button *ngIf="!Rfix" class="btn btn-success mt-2" (click)="receiverfix()">Confirm</button>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- <div class="container p-5" style="background-color:#31473a;">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div *ngFor="let message of messages; let i=index">
+                    <div class="p-3 my-2" style="background-color: #e4fde9; width: 50%; border-radius: 10px;" *ngIf="message.name === receiver">
+
+                        <p class="h6 text-success">{{message.name}}</p>
+                        {{message.message}}
+
+                    </div>
+                    <div style="justify-content: right; display: flex; align-items: flex-end;">
+                        <div class="p-3 my-2" style="background-color: #EDF4F2; width: 50%; border-radius: 10px;" *ngIf="message.name === sender">
+
+                            
+                            <p class="h6 text-success">{{message.name}}</p>
+                            {{message.message}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- register -->
+
+<div class="container text-center bg-light mt-5" *ngIf="registerprocess">
+    <div class="row">
+        <div class="row h4 justify-content-center bg-dark text-light p-2 mx-1 mb-5">USER REGISTER</div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><input type="text" class="form-control" placeholder="User Name" [(ngModel)]="regusername"></div>
+                <div class="col"><input type="text" class="form-control" placeholder="User Mobile no" [(ngModel)]="regusermobileno"></div>
+                <div class="col"><input type="text" class="form-control" placeholder="Password" [(ngModel)]="reguserpassword"></div>
+                <div class="row mb-5">
+                   
+                       
+                   
+                    <div class="col  mt-4">
+                       <button class="btn btn-primary mt-4" (click)="userreg()">Register</button>
+                    </div>
+                    <div class="row  mt-4">
+                       <p> Already having account <span class="text-primary" (click)="shoelogin()"> Go to login</span></p>
+                     </div>
+                   
+                        
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- login -->
+
+<div class="container  text-center bg-light mt-5" *ngIf="loginprocess">
+    <div class="row">
+        <div class="col">
+            <div class="row h4 justify-content-center bg-dark text-light p-2">LOGIN</div>
+            <div class="row p-5">
+                <div class="col"><input type="text" class="form-control" placeholder="User mobile no"[(ngModel)]="loginmobileno"></div>
+                <div class="col"><input type="text" class="form-control" placeholder="Password"[(ngModel)]="loginpassword"></div>
+               
+            </div> <div class="col"><button class="btn btn-primary" (click)="userlogin()">Login</button></div>
+            <div class="row  mt-4">
+                <p>New User <span class="text-primary" (click)="showreg()"> Go to Registration</span></p>
+              </div>
+        </div>
+    </div>
+</div>
+
+<div class="px-3 py-2 m-0 bg-dark heightfix"*ngIf="chatprocess" >
+
+    <div class="row">
+        <div class="col m-2 p-3 bg-dark text-light" style="border-radius: 20px;">
+            <!--  Your Name  :<input type="text" class="form-control" [(ngModel)]="sender" [disabled]="Sfix"> 
+            <button *ngIf="!Sfix" class="btn btn-success mt-2" (click)="senderfix()">Confirm</button> -->
+            <!-- <button style="border-radius: 100%;" class="p-3 btn btn-primary">user</button> <span style="margin-left: 20px; font-weight: bolder;">{{sender}}</span> -->
+             <div class="col text-light h2">
+                {{sender|uppercase}}
+             </div>
+            
+        </div>
+        <!-- <div class="col">
+            <button class="btn btn-danger" (click)="stopTimer()">log out</button></div> -->
+        <div class="col m-2 p-3" style="text-align: right;">
+
+            <button class="btn btn-primary ms-2" (click)="addcontact()" *ngIf="addcontactdetails">Add Contact</button>
+            <button class="btn btn-danger ms-2" (click)="addcontact()" *ngIf="!addcontactdetails">Exit</button>
+            <button class="btn btn-danger ms-3" (click)="stopTimer()">log out</button>
+        </div>
+    </div>
+   
+    <div class="row p-2">
+
+        <!--add contact -->
+        <div class="row text-center" *ngIf="!addcontactdetails">
+            <div class="col-md-4 m-4 p-5 bg-dark text-light" style="border-radius: 50px;">
+                <div class="row">
+                  <input type="text"  placeholder="Friend name" class="form-control" [(ngModel)]="friendname">  <!-- {{friendname}} -->
+                    <input type="text" placeholder="friend contact no" class="form-control my-2" [(ngModel)]="friendcontactno">
+                    <button class="btn btn-success mt-3 w-25 " (click)="sendforadd()">add</button>
+                </div>
+            </div>
+            <!-- <div class="col-md"></div> -->
+        </div>
+
+        <!-- left side -->
+        <div class="col-xl-2 m-2 bg-light" id="bgimagel" *ngIf="addcontactdetails">
+            <!-- <img src="https://www.freepik.com/free-photo/hex-background-networking_66468511.htm#fromView=search&page=1&position=36&uuid=6970595d-bb41-4b9d-b3a5-89b2589600a1" alt=""> -->
+            <div class="row m-3">
+                <div class="col m-2 p-3 text-light text-center bg-dark anihov" style="border-radius: 10px; width: 50%;" *ngFor="let recei of receiverList; let i=index" (click)="startTimer()" (click)="receiverchoose(i)">{{recei.name}}
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- right side -->
+
+        <div class="col-xl m-2 p-3" id="bgimager" style="background-color: #ebebebb7;" *ngIf="addcontactdetails">
+            <div class="row hidescrol" id="scroll" style="position: relative;width: 100%;height: 750px; overflow: auto;"> 
+                <div class="col" >
+                    <div class="row">
+                        <div class="row"id="sticky">
+                          <div class="col-2 m-2 p-3 text-light text-center username"  style="border-radius: 20px; background-color: black;" *ngIf="receiver">{{receiver}}</div>
+                          <!-- <div class="col-2 m-2 p-3 friendno" *ngIf="receiver" style="display: none;">+91 {{receiverno}}</div> -->
+                        </div>
+                        <div *ngFor="let message of messages; let i=index">
+                            <div class="p-3 my-2 messagealign" *ngIf="message.Rname === loginmobileno && message.Sname === receiverno && loginmobileno !== receiverno">
+                                <div class="ps-3">
+                                     <p class="h6 py-1 text-primary">{{receiver}}</p>
+                                     <p class="p-0 m-0"> {{message.message}}</p>
+                                </div>
+                               
+                               
+        
+                            </div>
+                            <div style="justify-content: right; display: flex; align-items: flex-end;">
+                                <div class="p-3 my-2 messagealign"  *ngIf="message.Sname === loginmobileno && message.Rname === receiverno">
+                                    <div class="ps-3">
+                                            <p class="h6 py-1 text-danger">you</p>
+                                            <!-- <p class="h6 ">{{message.sname}}</p> -->
+                                            <p class="p-0 m-0">{{message.message}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-5 pt-5" *ngIf="show">
+                       <div class="container mt-5 pt-5">
+                        <div class="row text-center mt-5 pt-5">
+                                    <p class="h1 mt-5 tracking-widest">Hai <span style="color: rgb(32, 164, 252);">{{sender | uppercase}}</span> <br> Welcome Back</p>
+                        </div>
+                       </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row text-centerm-1 p-3" *ngIf="receiver" style="display: flex;">
+                        <input type="file"class="form-control ms-3 col bg-light w-25" name="" id=""><input type="text" class="form-control mx-3 col bg-light" [(ngModel)]="message_person"><button class="btn btn-primary col-2" (click)="send()">Send</button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

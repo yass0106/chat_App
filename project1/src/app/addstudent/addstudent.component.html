@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row mt-5 text-center">
+        <h3>ADD NEW STUDENT DETAILS</h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 my-3">
+            student name: {{name}}<input type="text" class="form-control" [(ngModel)]="name">
+        </div>
+        
+        <div class="col-md-6 my-3">
+            Register number: <input type="text" class="form-control"[(ngModel)]="regno">
+        </div>
+        <div class="col-md-6 my-3">
+            Department: <input type="text" class="form-control" [(ngModel)]="dep">
+        </div>
+        <div class="col-md-6 my-3">
+            Year: <input type="text" class="form-control" [(ngModel)]="year">
+        </div>
+        <div class="col my-3"><button class="btn btn-primary" (click)="addstudent()">ADD STUDENT</button></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Register No</th>
+                        <th>Department</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of students">
+                        <td>{{student.name}}</td>
+                        <td>{{student.registerNo}}</td>
+                        <td>{{student.department}}</td>
+                        <td>{{student.year}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+    </div>
+
+</div>

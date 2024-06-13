@@ -1,0 +1,45 @@
+<div>
+  <div *ngIf="hidevalue" class="row text-center text-white bg-dark p-2">
+    <div class="col-md" routerLink="dashboard">HOME</div>
+    <div class="col-md" routerLink="page1">Bootstrap</div>
+    <div class="col-md" routerLink="page2">Mark Entry</div>
+    <div class="col-md" routerLink="page3">PAGE3</div>
+    <div class="col-md" routerLink="addstudent">addstudent</div>
+    <div class="col-md" routerLink="editstudentdetails">editstudentdetails</div>
+    <div class="col-md" routerLink="deletestudent">deletestudent</div>
+    <div class="col-md" routerLink="watch">ascii </div>
+    <div class="col-md" routerLink="chat">Chat </div>
+    <div class="col-md" routerLink="new">New Component </div>
+    
+    <div class="col-md" (click)="logout()">logout</div>
+  </div>
+  <button *ngIf="hidevalue" class="btn btn-success py-1" (click)="hide()">--^--</button>
+  <button *ngIf="!hidevalue" class="btn btn-success py-1"(click)="hide()">----</button>
+</div>
+
+
+<!-- <div class="container justify-content-center mt-md-5 mt-5 pt-md-5" >
+  <div class="row text-center">
+      <div class="col-md-12">
+          <div class="h3">LOGIN</div>
+      </div>
+  </div>
+  <div class="row mt-3  justify-content-center">
+      <div class="col-md-6">
+          User name : <input type="text" class="form-control" [(ngModel)]="uname">
+      </div>
+  </div>
+  <div class="row mt-3  justify-content-center">
+      <div class="col-md-6">
+          Password : <input type="text" class="form-control" [(ngModel)]="password">
+      </div>
+  </div>
+  <div class="row mt-3  justify-content-center">
+      <div class="col-md-6">
+          <button class="btn btn-primary" (click)="login()">Login</button>
+      </div>
+  </div>
+</div> -->
+
+<router-outlet  />
+ 

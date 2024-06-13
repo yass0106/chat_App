@@ -1,0 +1,101 @@
+<div class="container text-center">
+    <div class="row m-5">
+        <h3>STUDENT MARK ENTRY</h3>
+    </div>    
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            student name  :  <input type="text" class="form-control" [(ngModel)]="sname">
+        </div>
+        <div class="col-md-5">
+            student Register number  :  <input type="text" class="form-control" [(ngModel)]="sRegno">{{value1}}
+        </div>
+        <div class="col-md-2 mt-4">
+           <button class="btn btn-primary"*ngIf ="edit"(click)="editstudentdetails(sRegno)">NEED TO EDIT</button>
+
+           <button class="btn btn-primary" *ngIf ="!edit" (click)="backtoadd()">BACK TO ADD</button>
+        </div>
+    </div>
+    <h3 class="my-3 text-center"> SUBJECT</h3>
+    <div class="row">
+        <div class="row m-0 p-0">
+            <div class="col-md-6">
+                Subject 1 : <input type="text" class="form-control" [(ngModel)]="sub1">
+            </div>
+            <div class="col-md-6">
+                Subject 2 : <input type="text" class="form-control"[(ngModel)]="sub2">
+            </div>
+        </div>
+
+        <div class="row m-0 p-0">
+            <div class="col-md-6">
+                Subject 3 : <input type="text" class="form-control"[(ngModel)]="sub3">
+            </div>
+            <div class="col-md-6">
+                Subject 4 : <input type="text" class="form-control" [(ngModel)]="sub4">
+            </div>
+        </div>
+       
+        <div class="row m-0 p-0">
+            <div class="col-md-6">
+                Subject 5 : <input type="text" class="form-control" [(ngModel)]="sub5">
+            </div>
+             <div class="col-md-6">
+                Subject 6 : <input type="text" class="form-control" [(ngModel)]="sub6">
+            </div>
+        </div>
+        
+    </div>
+    <div class="row text-right mt-5">
+        <div>
+            <button class="btn btn-success" (click)="addstudent()" *ngIf ="edit" >ADD STUDENT</button>
+            <button class="btn btn-success" (click)="updatestudentdetails(sRegno)" *ngIf ="!edit" >UPDATE STUDENT</button>
+            <button class="btn btn-success ms-3" (click)="check()">check</button>
+        </div>
+    </div> 
+    <div class="row text-right mt-5 d-flex table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <th>Sno</th>
+                <th>Student Name</th>
+                <th>Register Number</th>
+                <th>Subject 1</th>
+                <th>Subject 2</th>
+                <th>Subject 3</th>
+                <th>Subject 4</th>
+                <th>Subject 5</th>
+                <th>Subject 6</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of studentdetails; let i = index" >
+                    <td>{{i+1}}</td>
+                    <td>{{student.student_name}}</td>
+                    <td>{{student.sRegno}}</td>
+                    <td *ngIf="student.sub1<45; then sub1fail; else sub1pass">{{student.sub1}}</td>
+                    <ng-template #sub1fail > <td class="subfail">{{student.sub1}}</td> </ng-template>
+                    <ng-template #sub1pass > <td class="subpass">{{student.sub1}}</td> </ng-template>
+
+                    <td *ngIf="student.sub2<45;then sub2fail; else sub2pass">{{student.sub2}}</td>
+                    <ng-template #sub2fail > <td class="subfail">{{student.sub2}}</td> </ng-template>
+                    <ng-template #sub2pass > <td class="subpass">{{student.sub2}}</td> </ng-template>
+
+                    <td *ngIf="student.sub3<45;then sub3fail; else sub3pass">{{student.sub3}}</td>
+                    <ng-template #sub3fail > <td class="subfail">{{student.sub3}}</td> </ng-template>
+                    <ng-template #sub3pass > <td class="subpass">{{student.sub3}}</td> </ng-template>
+
+                    <td *ngIf="student.sub4<45; then sub4fail; else sub4pass">{{student.sub4}}</td>
+                    <ng-template #sub4fail > <td class="subfail">{{student.sub4}}</td> </ng-template>
+                    <ng-template #sub4pass > <td class="subpass">{{student.sub4}}</td> </ng-template>
+
+                    <td *ngIf="student.sub5<45;then sub5fail; else sub5pass">{{student.sub5}}</td>
+                    <ng-template #sub5fail > <td class="subfail">{{student.sub5}}</td> </ng-template>
+                    <ng-template #sub5pass > <td class="subpass">{{student.sub5}}</td> </ng-template>
+
+                    <td *ngIf="student.sub6<45; then sub6fail; else sub6pass">{{student.sub6}}</td>
+                    <ng-template #sub6fail > <td class="subfail">{{student.sub6}}</td> </ng-template>
+                    <ng-template #sub6pass > <td class="subpass">{{student.sub6}}</td> </ng-template>
+                </tr>
+            </tbody>
+        </table>
+    </div>

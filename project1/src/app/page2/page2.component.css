@@ -1,0 +1,10 @@
+td{
+    padding:10px 30px;
+   
+}
+.subfail{
+    color: red; 
+}
+.subpass{
+    color: rgb(19, 54, 19);
+}

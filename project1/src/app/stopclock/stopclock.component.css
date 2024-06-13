@@ -1,0 +1,20 @@
+.no{
+    font-size: larger;
+}
+
+
+.stopwatch {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    font-size: 1.2em;
+    margin: 0 10px;
+    padding: 10px 20px;
+  }

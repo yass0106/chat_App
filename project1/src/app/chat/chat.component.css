@@ -1,0 +1,42 @@
+#bgimagel{
+    border-radius: 20px;
+    background-image: url('https://img.freepik.com/free-photo/graphic-2d-colorful-wallpaper-with-grainy-gradients_23-2151001621.jpg?t=st=1718191131~exp=1718194731~hmac=79ccf4f044340ff5d4ff462627fb8dace6aee22e5a3aeb148170104cb87c5da1&w=740');
+}
+#bgimager{
+    border-radius: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://img.freepik.com/free-photo/graphic-2d-colorful-wallpaper-with-grainy-gradients_23-2151001621.jpg?t=st=1718191131~exp=1718194731~hmac=79ccf4f044340ff5d4ff462627fb8dace6aee22e5a3aeb148170104cb87c5da1&w=740');
+}
+.anihov:hover{
+    transition: 1s;
+    transform: translate(10px,0px);
+}
+
+.hidescrol::-webkit-scrollbar {
+    display: none;
+}
+#sticky{
+    /* background-color: aliceblue; */
+    border-radius: 20px;
+    position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+/* #sticky:hover.friendno{
+        display: flex; 
+} */
+/* .heightfix{
+    height: 100%;
+} */
+
+.messagealign{
+    background-color: #fde4e4; width: 30%; border-radius: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    .messagealign,.username{
+        background-color: #49f50500; width: auto;
+    }
+  }
